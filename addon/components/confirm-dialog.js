@@ -36,7 +36,7 @@ export default Component.extend({
 
   actions: {
     click(isConfirmed) {
-      this.get('confirm').close(isConfirmed);
+      this.get('confirm').submit(isConfirmed);
     }
   }
 });

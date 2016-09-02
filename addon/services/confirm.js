@@ -11,10 +11,18 @@ export default Service.extend({
     this.set('isShow', true);
     this.set('callback', callback);
   },
-  close(isConfirmed) {
+  submit(isConfirmed) {
     if (this.get('callback')) {
       this.get('callback')(isConfirmed);
     }
+
+    const closeOnConfirm = this.get('options.closeOnConfirm');
+
+    if(closeOnConfirm !== false) {
+      this.set('isShow', false);
+    }
+  },
+  close() {
     this.set('isShow', false);
   }
 });
